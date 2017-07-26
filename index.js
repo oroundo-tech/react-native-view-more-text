@@ -52,8 +52,6 @@ export default ViewMoreText = React.createClass({
   onLayout(event){
     const {x, y, width, height} = event.nativeEvent.layout;
 
-    if(height === 0 || this.state.opacity === 1) return false;
-
     this.setOriginalHeight(height);
     this.checkTextTruncated(height);
     if(this.state.numberOfLines === this.props.numberOfLines){
