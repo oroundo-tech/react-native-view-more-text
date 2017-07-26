@@ -62,7 +62,7 @@ export default ViewMoreText = React.createClass({
   },
   
   setOriginalHeight(height){
-    if(this.originalHeight === 0){
+    if(this.originalHeight === 0 || this.originalHeight < height){
       this.originalHeight = height;
 
       this.setState({
@@ -72,6 +72,7 @@ export default ViewMoreText = React.createClass({
   },
 
   checkTextTruncated(height){
+    console.log(height, this.originalHeight)
     if(height < this.originalHeight){
       this.shouldShowMore = true;
     }
